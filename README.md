@@ -1,9 +1,10 @@
-# Backend practica cafeteria
+# Backend lista de tareas
 
 
 # Middlewares
 - cors
 - morgan
+- 
  
 
 
@@ -20,19 +21,10 @@
 # Endpoints
 
 ```bash
-GET api/productos
+GET api/test
 ```
-Descripcion: Devuelve un array con algunos de los productos que ofrece la cafeteria 
+Descripcion: Devuelve un string de comprobacion 
 
-```bash
-GET api/promo
-```
-Descripcion: Devuelve un string de la promo de 2x1 de la cafeteria
-
-```bash
-GET api/horarios
-```
-Descripcion: Devuelve un string de los horarios de la cafeteria.
 
 # Autor
 - Nair Paez
