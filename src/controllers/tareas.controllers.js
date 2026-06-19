@@ -1,8 +1,13 @@
- export const prueba = (req, res) =>{
-    res.json('prueba de ruta, de nuevo')
-}
+export const prueba = (req, res) => {
+  res.json("prueba de ruta, de nuevo");
+};
 
-
- export const crearTarea = (req, res) =>{
-    res.json('hasta luego')
-}
+export const crearTarea = (req, res) => {
+  try {
+    // console.log(req.body);
+    res.json("hasta luego");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensaje: "Ocurrio un error al crear la tarea" });
+  }
+};
