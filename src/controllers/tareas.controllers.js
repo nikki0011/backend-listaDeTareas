@@ -47,3 +47,39 @@ export const obtenerTareaPorID = async (req, res) => {
       .json({ mensaje: "Ocurrio un error al buscar una tarea por ID" });
   }
 };
+
+export const borrarTareaPorID = async (req, res) => {
+  try {
+    const tareaBorrada = await Tarea.findByIdAndDelete(req.params.id);
+   
+    if (!tareaBorrada) {
+      return res
+        .status(404)
+        .json({ mensaje: "No se encontro una tarea con ese ID" });
+    }
+    res.status(200).json({mensaje: 'La tarea fue borrada correctamente'});
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ mensaje: "Ocurrio un error al intentar borrar una tarea por ID" });
+  }
+};
+
+export const editarTareaPorID = async (req, res) => {
+  try {
+    //deberia validar que el id exista y sea un id de mongodb
+    const tareaActualizada = await Tarea.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    if (!tareaActualizada) {
+      return res
+        .status(404)
+        .json({ mensaje: "No se encontro una tarea con el id enviado" });
+    }
+    res.status(200).json({mensaje: 'La tarea fue editada correctamente', tarea: tareaActualizada});
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ mensaje: "Ocurrio un error al intentar editar una tarea por id" });
+  }
+};
