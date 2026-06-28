@@ -7,7 +7,7 @@ const router = Router()
 
 router.route('/test').get(prueba)
 router.route('/').post(validacionTarea,crearTarea).get(listaTarea)
-router.route('/:id').get(validacionIDTarea,obtenerTareaPorID).delete(borrarTareaPorID).put([validacionIDTarea,validacionTarea],editarTareaPorID).patch(editarTareaPorID)
+router.route('/:id').get(validacionIDTarea,obtenerTareaPorID).delete(validacionIDTarea,borrarTareaPorID).put([validacionIDTarea,validacionTarea],editarTareaPorID).patch(editarTareaPorID)
 
 
 export default router
