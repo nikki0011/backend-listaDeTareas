@@ -10,7 +10,7 @@ const TareaSchema = new Schema(
       maxLength: 100,
       trim: true,
     },
-    categoria: {
+    estado: {
       type: String,
       required: true,
       enum: ["Ok", "Pendiente"],
