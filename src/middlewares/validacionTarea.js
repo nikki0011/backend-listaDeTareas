@@ -6,7 +6,7 @@ import Tarea from "../models/tarea.js";
   body("nombreTarea")
     .isString()
     .withMessage("El dato debe ser un string")
-    .isLength({ min: 5, max: 100 })
+    .isLength({ min: 1, max: 100 })
     .withMessage("El nombre Tarea debe contener entre 1 y 100 caracteres")
     .custom(async (valor, { req }) => {
       const tareaBuscada = await Tarea.findOne({ nombreTarea: valor });
